@@ -1,0 +1,36 @@
+Users
+:username [presence, length] - string
+:email [presence, valid] - string
+:password [presence, length] - string
+has_many ideas, projects, actions, appointments
+
+Notes - Polymorphic
+:title [presence] - string
+:body [presence] - text
+::convert to project
+::convert to action
+belongs_to user, ideas, projects, actions, appointments
+
+Projects
+:name [presence] - string
+:outcome [presence] - string
+:due_date [] - date
+:due_time [] - time
+:completed [] - boolean
+has_many actions
+belongs_to user
+
+Actions
+:body [presence] - string
+:due_date [] - date
+:completed [] - boolean
+:context [presence] - string, selectlist
+belongs_to projects, user
+
+Appointments
+:name [presence] - string
+:date [presence] - date
+:start_time [] - time
+:end_time [] - time
+:repeating [] - boolean
+belongs_to user
