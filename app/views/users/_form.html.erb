@@ -1,4 +1,5 @@
 <div class="container text-center">
+  <%= render 'users/errors', object: @user %>
   <%= form_for(@user, :html => {:class => 'form-horizontal'}) do |f| %>
     <div class="form-group">
       <%= f.label :name, class: 'control-label col-md-3' %>
