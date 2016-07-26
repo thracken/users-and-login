@@ -4,9 +4,11 @@
       <%= link_to "Planner", root_url, html_options = {class: "navbar-brand"} %>
     </div>
     <ul class="nav navbar-nav navbar-left">
-      <li><%= link_to 'Projects', '#'%></li>
-      <li><%= link_to 'Actions', '#'%></li>
-      <li><%= link_to 'Notes', '#' %></li>
+      <% if logged_in? %>
+        <li><%= link_to 'Projects', '#'%></li>
+        <li><%= link_to 'Actions', '#'%></li>
+        <li><%= link_to 'Notes', '#' %></li>
+      <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
