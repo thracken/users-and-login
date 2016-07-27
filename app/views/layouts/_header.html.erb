@@ -1,13 +1,14 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <%= link_to "Planner", root_url, html_options = {class: "navbar-brand"} %>
+      <%= link_to "Site Name", root_url, html_options = {class: "navbar-brand"} %>
     </div>
     <ul class="nav navbar-nav navbar-left">
+      <li><%= link_to 'Page', '#' %></li>
       <% if logged_in? %>
-        <li><%= link_to 'Projects', '#'%></li>
-        <li><%= link_to 'Actions', '#'%></li>
-        <li><%= link_to 'Notes', '#' %></li>
+        <li><%= link_to 'Page 2', '#'%></li>
+        <li><%= link_to 'Page 3', '#'%></li>
+        <li><%= link_to 'Page 4', '#' %></li>
       <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
