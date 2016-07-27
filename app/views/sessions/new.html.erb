@@ -1,0 +1,28 @@
+<h1 class="text-center">Log In</h1>
+
+<div class="container text-center">
+  <%= form_for(:session, url: login_url, :html => {:class => 'form-horizontal'}) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :email, class: 'control-label col-md-3' %>
+      <div class="col-md-6"><%= f.email_field :email, class: 'form-control' %></div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, class: 'control-label col-md-3' %>
+      <div class="col-md-6"><%= f.password_field :password, class: 'form-control' %></div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :remember_me, class: 'checkbox inline' do %>
+        <%= f.check_box :remember_me %>
+        <span>Remember me on this computer</span>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Log In", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  <p>Don't have an account? <%= link_to "Sign up", signup_url %> now!</p>
+</div>
