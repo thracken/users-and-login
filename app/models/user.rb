@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true, length: {minimum: 3, maximum: 60}
   validates :email, presence: true, length: {maximum: 255}, format: {with: EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-  validates :password, length: {minimum: 10, maximum: 255}
+  validates :password, presence: true, length: {minimum: 10, maximum: 255}, allow_nil: true
   has_secure_password
 
   def User.new_token
